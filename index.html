@@ -3,108 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Snippet Test</title>
+    <title>SiteLint Testing site</title>
 
 <script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=8a993751dd57e89162cb697096c13dee85108845173a1ee460e718723c5d19bb';m.parentNode.insertBefore(a, m);
 })(window, document, 'script');</script>
     
 </head>
 <body>
-
-  <!-- main -->
-  <main>
-    <h1 id="ERR008" class="blink">RuPaul's #1 Fan Site!!</h1>
-
-    <div style="display: flex; width: 100%; gap: 1rem;">
-      <div style="flex: 0 1 auto;">
-        <img id="ERR001" src="http://develop.accessibility-tool-testing.qa.internal.test/assets/rupaul.jpeg" style="height:300px; width: auto;">
-        <br />
-        <button id="ERR006" type="button" style="background-color: darkmagenta; color:orchid;" onmousedown="alert('Serve')">
-          LOVE this outfit
-        </button>
-        <button id="ERR004" style="background-color: blueviolet; color:whitesmoke;" onclick="alert('Serve')">
-          I like it!
-        </button>
-        <button id="ERR012" type="button" style="background-color: #000; color: #fff" onclick="alert('Sashay away')" class="hidden-focus">
-          Not my fav
-        </button>
-      </div>
-      <div style="flex: 0 1 auto;">
-        <div id="ERR007" style="width: 100%; height: 300px; overflow-y: scroll; background-color: #dedede; padding: 1rem;">
-          <p>RuPaul Andre Charles (born November 17, 1960) is an American drag queen, television personality, actor,
-            singer, and producer. He produces, hosts, and judges the reality competition series RuPaul's Drag Race and
-            has received several accolades, including 12 Primetime Emmy Awards, three GLAAD Media Awards, a Critics'
-            Choice Television Award, two Billboard Music Awards, and a Tony Award. He has been dubbed the "Queen of
-            Drag" and is considered the most commercially successful drag queen in the United States, with Fortune
-            saying that he is "easily the world's most famous drag queen."</p>
-
-          <p>Born and raised in San Diego, RuPaul later studied performing arts in Atlanta, before relocating to New
-            York City, where he became a popular fixture on the LGBT nightclub scene. He achieved international fame as
-            a drag queen with the release of his debut single, "Supermodel (You Better Work)", which was included on his
-            debut studio album Supermodel of the World (1993). RuPaul became a spokesperson for MAC Cosmetics in 1994,
-            raising money for the Mac AIDS Fund and becoming the first drag queen to land a major cosmetics campaign. He
-            later received his own television talk show on VH1 titled The RuPaul Show (1996&ndash;1998), while
-            co-hosting the morning radio show on WKTU with Michelle Visage.</p>
-
-          <p>RuPaul's Drag Race was created in 2009 and has gone on to produce fifteen seasons in the United States. The
-            show has also seen success internationally. There are several international variants of the show, including
-            RuPaul's Drag Race UK (2019&ndash;present) and Canada's Drag Race (2020&ndash;present). This has also
-            inspired several spin-offs of the main show, including RuPaul's Drag U (2010&ndash;2012), RuPaul's Drag Race
-            All Stars, (2012&ndash;present), and RuPaul's Secret Celebrity Drag Race (2020&ndash;2022). He has also
-            featured as a host on other reality series, such as Skin Wars (2014&ndash;2016), Good Work (2015), and Gay
-            for Play Game Show Starring RuPaul (2016&ndash;2017).</p>
-
-          <p>RuPaul has made appearances in films, including Crooklyn (1994), The Brady Bunch Movie (1995), To Wong Foo,
-            Thanks for Everything! Julie Newmar (1995), and But I'm a Cheerleader (1999), as well as television series,
-            including Girlboss (2017), Broad City (2017), and Grace and Frankie (2019). He created and starred in his
-            own Netflix original series AJ and the Queen (2020). RuPaul has also published three books: Lettin' It All
-            Hang Out (1995), Workin' It! RuPaul's Guide to Life, Liberty, and the Pursuit of Style (2010) and GuRu
-            (2018). As a recording artist, he has released fifteen studio albums. He received a Tony Award for Best
-            Musical as a producer for the musical A Strange Loop (2019).</p>
-
-          <p>Drag Queens are known for their use of bright colors in their costumes, such as sapphire, aqua, and golden
-            yellow.</p>
-        </div>
-      </div>
+    <!-- Image without Alt Text -->
+    <img src="https://via.placeholder.com/150" alt="">
+    
+    <!-- Colored text on colored background with low contrast -->
+    <div style="background-color: #F00; color: #0F0;">
+        <p>This is an example of colored text on a colored background with insufficient contrast.</p>
     </div>
-
-    <div class="pagination">
-      <ol>
-        <li><a id="ERR013" href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">6</a></li>
-        <li><a href="#">7</a></li>
-        <li><a href="#">8</a></li>
-        <li><a href="#">9</a></li>
-        <li><a href="#">10</a></li>
-      </ol>
-    </div>
-
-    <h3 id="ERR017">Sign up for the newsletter</h3>
-    <form id="validation-form" action="">
-      <p id="ERR003">Required fields marked in green.</p>
-
-      <div id="errors-list" class="errors"></div>
-
-      <div class="input-group">
-        <label>First Name</label>
-        <input type="text" name="fname" id="ERR002" style="background-color: lightgreen; border-color:green" />
-      </div>
-      <div class="input-group">
-        <label for="lname">Last Name</label>
-        <input type="text" name="lname" id="lname" style="background-color: lightgreen; border-color:green" />
-      </div>
-      <div class="input-group">
-        <label for="ERR015">Birthday</label>
-        <input type="text" name="birthday" id="ERR015" style="background-color: lightblue;" />
-      </div>
-
-      <div class="input-group"><button id="ERR005" type="submit">Submit</button></div>
-    </form>
-  </main>
-
+    
+    <!-- Incorrect heading levels -->
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
 </body>
 </html>
