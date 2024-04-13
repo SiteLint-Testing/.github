@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Violations Example - Page 2</title>
+
+  <script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=4675d5a1236088c01dd3567e1b1160c636f978c557904748d25d097f8e6019b3';m.parentNode.insertBefore(a, m);
+})(window, document, 'script');</script>
+
+</head>
+<body>
+    <!-- Image with Empty Alt Text -->
+    <img src="https://via.placeholder.com/150" alt="">
+    
+    <!-- Text with Low Contrast -->
+    <p style="color: #777; background-color: #DDD;">This is an example of text with low contrast.</p>
+    
+    <!-- Links without Descriptive Text -->
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    
+    <!-- Tables without Captions -->
+    <table border="1">
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+        </tr>
+    </table>
+</body>
+</html>
