@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiteLint Testing site</title>
-
-<script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=45a00c4a9ed3dd3e149b2e74a3a9ffa9f9c72428296de8dd144cc348e268450d';m.parentNode.insertBefore(a, m);
-})(window, document, 'script');</script>
-    
+    <title>Accessibility Violations Example - Page 1</title>
 </head>
 <body>
+    <!-- Navigation Links -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Page 1</a></li>
+            <li><a href="second.html">Page 2</a></li>
+        </ul>
+    </nav>
+    
     <!-- Image without Alt Text -->
     <img src="https://via.placeholder.com/150" alt="">
     
-    <!-- Colored text on colored background with low contrast -->
+    <!-- Colored Text on Colored Background with Low Contrast -->
     <div style="background-color: #F00; color: #0F0;">
         <p>This is an example of colored text on a colored background with insufficient contrast.</p>
     </div>
     
-    <!-- Incorrect heading levels -->
+    <!-- Incorrect Heading Levels -->
     <h1>Heading 1</h1>
     <h2>Heading 2</h2>
     <h3>Heading 3</h3>
