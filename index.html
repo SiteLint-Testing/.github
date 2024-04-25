@@ -5,33 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessibility Violations Example - Page 1</title>
 
-<script>
-(function(w,d,s,a,m,t) {
-  a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.fetchpriority='high';a.id = 'auditor_app';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=4382813738bae2759c0de508d6f26e6d7fe10537320947d62b5ebe62fffc2768';
-
-  function onPageLoaded() {
-    w.clearTimeout(t);
-    w.removeEventListener('DOMContentLoaded', onPageLoaded);
-    m.parentNode.insertBefore(a, m);
-  }
-  
-  function onAuditorLoaded(){
-    auditor.config({
-      includeHidden: true,
-      stripTextFromReport: false
-    }).run();
-  }
-
-  a.addEventListener('load', onAuditorLoaded);
-
-  if (d.readyState !== 'loading') {
-    onPageLoaded();
-    return;
-  }
-
-  w.addEventListener('DOMContentLoaded', onPageLoaded);
-})(window, document, 'script');
-</script>
+<script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=42767d0db2ad4bf3e1f868b5aa0957b42570f5adb2d1ca3856612d98e7a8ad0d';m.parentNode.insertBefore(a, m);
+})(window, document, 'script');</script>
     
     <!-- Element that shouldn't be in the <head> section -->
     <p>This paragraph is incorrectly placed in the head section. It should be in the body section instead.</p>
