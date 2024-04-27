@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Accessibility Violations Example - Page 1</title>
     
-    <!-- <meta name="viewport"> with user-scalable="no" -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     
     <!-- Font family Arial -->
@@ -15,8 +14,8 @@
             margin-left: 20px; /* Adds a margin to the left side of the page */
         }
         summary {
-            background-color: #333333; /* Dark gray background */
-            color: #FFFFFF; /* White text */
+            background-color: #F0F0F0; /* Light gray background */
+            color: #000000; /* Black text */
             padding: 5px; /* Add padding for easier visibility */
             border-radius: 4px; /* Rounded corners */
             margin-bottom: 5px; /* Margin between each collapsible section */
@@ -79,6 +78,10 @@
 &lt;/svg&gt;
             </code></pre>
         </div>
+        <!-- Actual offending SVG -->
+        <svg width="100" height="100">
+            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red"></circle>
+        </svg>
     </details>
 
     <!-- 2. Audio without captions -->
@@ -92,6 +95,11 @@
 &lt;/audio&gt;
             </code></pre>
         </div>
+        <!-- Actual offending audio element -->
+        <audio controls>
+            <source src="path_to_audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     </details>
 
     <!-- 3. Video without captions -->
@@ -105,6 +113,11 @@
 &lt;/video&gt;
             </code></pre>
         </div>
+        <!-- Actual offending video element -->
+        <video controls>
+            <source src="path_to_video.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
     </details>
 
     <!-- 4. Image with alt text that includes the file name -->
@@ -116,6 +129,8 @@
             <pre><code>&lt;img src="https://via.placeholder.com/150" alt="placeholder_image"&gt;
             </code></pre>
         </div>
+        <!-- Actual offending image -->
+        <img src="https://via.placeholder.com/150" alt="placeholder_image">
     </details>
 
     <!-- 5. Alternative image description too generic -->
@@ -127,6 +142,8 @@
             <pre><code>&lt;img src="https://via.placeholder.com/150" alt="This is an image"&gt;
             </code></pre>
         </div>
+        <!-- Actual offending image -->
+        <img src="https://via.placeholder.com/150" alt="This is an image">
     </details>
 
     <!-- 6. Element with aria-hidden="false" -->
@@ -139,6 +156,10 @@
     &lt;p&gt;This element should be hidden, but it isn't.&lt;/p&gt;
 &lt;/div&gt;
             </code></pre>
+        </div>
+        <!-- Actual offending element -->
+        <div aria-hidden="false">
+            <p>This element should be hidden, but it isn't.</p>
         </div>
     </details>
 
@@ -153,6 +174,10 @@
 &lt;/div&gt;
             </code></pre>
         </div>
+        <!-- Actual offending element -->
+        <div role="dialog">
+            <p>This dialog lacks an accessible name.</p>
+        </div>
     </details>
 
     <!-- 8. Word in all capital letters -->
@@ -164,6 +189,8 @@
             <pre><code>&lt;p&gt;THIS IS AN ALL CAPS EXAMPLE.&lt;/p&gt;
             </code></pre>
         </div>
+        <!-- Actual offending text -->
+        <p>THIS IS AN ALL CAPS EXAMPLE.</p>
     </details>
 
     <!-- 9. More than one element with role="contentinfo" -->
@@ -180,6 +207,13 @@
 &lt;/div&gt;
             </code></pre>
         </div>
+        <!-- Actual offending elements -->
+        <footer role="contentinfo">
+            <p>This is the first contentinfo section.</p>
+        </footer>
+        <div role="contentinfo">
+            <p>This is the second contentinfo section, which is redundant.</p>
+        </div>
     </details>
 
     <!-- 10. Element with a defined background-image -->
@@ -192,6 +226,10 @@
     &lt;p&gt;This is an element with a background image but no alternative text.&lt;/p&gt;
 &lt;/div&gt;
             </code></pre>
+        </div>
+        <!-- Actual offending element -->
+        <div style="background-image: url('https://via.placeholder.com/300');">
+            <p>This is an element with a background image but no alternative text.</p>
         </div>
     </details>
 
@@ -209,6 +247,13 @@
 &lt;/div&gt;
             </code></pre>
         </div>
+        <!-- Actual offending elements -->
+        <div id="duplicateId">
+            <p>This element has a duplicated ID attribute.</p>
+        </div>
+        <div id="duplicateId">
+            <p>This element also has a duplicated ID attribute.</p>
+        </div>
     </details>
 
     <!-- 12. Element with an empty title attribute -->
@@ -220,6 +265,8 @@
             <pre><code>&lt;p title=""&gt;This element has an empty title attribute.&lt;/p&gt;
             </code></pre>
         </div>
+        <!-- Actual offending element -->
+        <p title="">This element has an empty title attribute.</p>
     </details>
 
     <!-- 13. Element with an attribute classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" -->
@@ -233,6 +280,10 @@
 &lt;/object&gt;
             </code></pre>
         </div>
+        <!-- Actual offending element -->
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="400" height="300">
+            <param name="movie" value="path_to_flash_movie.swf">
+        </object>
     </details>
 
     <!-- 14. Flickering content that flashes more than three times in a single second -->
@@ -253,6 +304,17 @@
 &lt;/style&gt;
             </code></pre>
         </div>
+        <!-- Actual offending content -->
+        <div style="background-color: red; animation: flicker 0.1s infinite;">
+            <p>This content flickers rapidly and can cause discomfort to some users.</p>
+        </div>
+        <style>
+            @keyframes flicker {
+                0% { opacity: 1; }
+                50% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+        </style>
     </details>
 
     <!-- 15. Content with defined font-style type italic for a text with length more than 80 characters -->
@@ -266,12 +328,20 @@
 &lt;/p&gt;
             </code></pre>
         </div>
+        <!-- Actual offending content -->
+        <p style="font-style: italic;">
+            This is a paragraph with a long text length that is styled with italics. This may cause difficulty in readability for some users due to the length of the text and the style.
+        </p>
     </details>
 
     <!-- 16. Missing an <h1> element -->
     <details>
         <summary>16. Missing an <h1> element</summary>
         <p>Missing an <h1> element can cause issues with the document structure and accessibility.</p>
+        <div>
+            <!-- Offending code -->
+            <pre><code>Missing an &lt;h1&gt; element</code></pre>
+        </div>
     </details>
 
     <!-- 17. Accessible names of sibling heading elements on the same level that are not unique -->
@@ -284,6 +354,9 @@
 &lt;h2&gt;Example Heading&lt;/h2&gt;
             </code></pre>
         </div>
+        <!-- Actual offending elements -->
+        <h2>Example Heading</h2>
+        <h2>Example Heading</h2>
     </details>
 
     <!-- 18. The <hr> element -->
@@ -295,6 +368,8 @@
             <pre><code>&lt;hr /&gt;
             </code></pre>
         </div>
+        <!-- Actual offending element -->
+        <hr />
     </details>
 
     <!-- 19. Defined style text-indent with value positioning element out of the viewport -->
@@ -308,6 +383,10 @@
 &lt;/div&gt;
             </code></pre>
         </div>
+        <!-- Actual offending element -->
+        <div style="text-indent: -9999px;">
+            <p>This content is indented out of view.</p>
+        </div>
     </details>
 
     <!-- 20. Dir attribute with a value other than rtl, ltr, or auto -->
@@ -319,6 +398,8 @@
             <pre><code>&lt;p dir="wrong-value"&gt;This text has an incorrect dir attribute value.&lt;/p&gt;
             </code></pre>
         </div>
+        <!-- Actual offending text -->
+        <p dir="wrong-value">This text has an incorrect dir attribute value.</p>
     </details>
 
     <!-- 21. Element that has identical <label> and title attribute -->
@@ -331,6 +412,9 @@
 &lt;input type="text" id="username" name="username"&gt;
             </code></pre>
         </div>
+        <!-- Actual offending element -->
+        <label title="Username" for="username">Username</label>
+        <input type="text" id="username" name="username">
     </details>
 
     <!-- 22. Link text with ambiguous purpose -->
@@ -342,6 +426,8 @@
             <pre><code>&lt;a href="#"&gt;Click here&lt;/a&gt;
             </code></pre>
         </div>
+        <!-- Actual offending link -->
+        <a href="#">Click here</a>
     </details>
 
     <!-- 23. Link pointing to a location in a different language without hreflang attribute -->
@@ -353,6 +439,8 @@
             <pre><code>&lt;a href="https://es.example.com"&gt;Spanish website&lt;/a&gt;
             </code></pre>
         </div>
+        <!-- Actual offending link -->
+        <a href="https://es.example.com">Spanish website</a>
     </details>
 
     <!-- 24. Link with target="_blank" that doesn't indicate it's going to open a new window -->
@@ -364,6 +452,8 @@
             <pre><code>&lt;a href="https://www.example.com" target="_blank"&gt;Example&lt;/a&gt;
             </code></pre>
         </div>
+        <!-- Actual offending link -->
+        <a href="https://www.example.com" target="_blank">Example</a>
     </details>
 
     <!-- 25. Two links with the same text that point to different locations -->
@@ -376,6 +466,9 @@
 &lt;a href="https://www.example2.com"&gt;Visit Us&lt;/a&gt;
             </code></pre>
         </div>
+        <!-- Actual offending links -->
+        <a href="https://www.example.com">Visit Us</a>
+        <a href="https://www.example2.com">Visit Us</a>
     </details>
 
     <!-- 26. More than one <main> landmark -->
@@ -392,6 +485,13 @@
 &lt;/main&gt;
             </code></pre>
         </div>
+        <!-- Actual offending elements -->
+        <main>
+            <p>This is the first main landmark.</p>
+        </main>
+        <main>
+            <p>This is the second main landmark.</p>
+        </main>
     </details>
 
     <!-- 27. Main landmark element not contained within other landmarks -->
@@ -405,6 +505,10 @@
 &lt;/main&gt;
             </code></pre>
         </div>
+        <!-- Actual offending element -->
+        <main>
+            <p>This main element is not contained within other landmarks.</p>
+        </main>
     </details>
 
     <!-- 28. Font size smaller than 10px -->
@@ -416,17 +520,21 @@
             <pre><code>&lt;p style="font-size: 8px;"&gt;This text is too small and can be difficult to read.&lt;/p&gt;
             </code></pre>
         </div>
+        <!-- Actual offending content -->
+        <p style="font-size: 8px;">This text is too small and can be difficult to read.</p>
     </details>
 
     <!-- 29. One of img, area, or input[type="image"] has not defined alt attribute -->
     <details>
-        <summary>29. One of img, area, or input[type="image"] has not defined alt attribute</summary>
+        <summary>29. One of img, area, or input[type="image"] has not defined an alt attribute</summary>
         <p>This input element of type image does not have an alt attribute, which is important for accessibility.</p>
         <div>
             <!-- Offending code -->
             <pre><code>&lt;input type="image" src="https://via.placeholder.com/100" value="Submit"&gt;
             </code></pre>
         </div>
+        <!-- Actual offending element -->
+        <input type="image" src="https://via.placeholder.com/100" value="Submit">
     </details>
 
     <!-- 30. HTML anchor element without href attribute -->
@@ -438,6 +546,8 @@
             <pre><code>&lt;a&gt;This is an anchor element without an href attribute.&lt;/a&gt;
             </code></pre>
         </div>
+        <!-- Actual offending element -->
+        <a>This is an anchor element without an href attribute.</a>
     </details>
 
     <!-- 31. Focusable element defined with aria-hidden="true" or role="presentation" -->
@@ -449,6 +559,8 @@
             <pre><code>&lt;button aria-hidden="true"&gt;Button&lt;/button&gt;
             </code></pre>
         </div>
+        <!-- Actual offending element -->
+        <button aria-hidden="true">Button</button>
     </details>
 
     <!-- 32. Section on the page should have a scrollbar horizontally and vertically -->
@@ -462,6 +574,10 @@
 &lt;/div&gt;
             </code></pre>
         </div>
+        <!-- Actual offending content -->
+        <div style="width: 100px; height: 100px; overflow: scroll;">
+            <p>Scrollable content horizontally and vertically.</p>
+        </div>
     </details>
 
     <!-- 33. Incorrect URL defined in an anchor href attribute -->
@@ -473,6 +589,8 @@
             <pre><code>&lt;a href="htp://www.incorrect-url.com"&gt;Incorrect URL&lt;/a&gt;
             </code></pre>
         </div>
+        <!-- Actual offending element -->
+        <a href="htp://www.incorrect-url.com">Incorrect URL</a>
     </details>
 
     <!-- Expand All and Collapse All Links -->
