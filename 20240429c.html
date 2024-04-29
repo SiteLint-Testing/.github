@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Accessibility Violations Example - Page 1</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <!-- Font family Arial -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center the content on the page */
+            margin: 0;
+            padding-bottom: 90px; /* 90px of white space at the bottom of the page */
+        }
+        .container {
+            text-align: left; /* Left align text within each of the sections */
+            margin: 0 auto; /* Center the content on the page */
+            width: 80%; /* Set a specific width to the container */
+        }
+        summary {
+            background-color: #F0F0F0; /* Light gray background */
+            color: #000000; /* Black text */
+            padding: 5px; /* Add padding for easier visibility */
+            border-radius: 4px; /* Rounded corners */
+            margin-bottom: 5px; /* Margin between each collapsible section */
+            cursor: pointer; /* Show a pointer cursor on hover */
+            display: inline-block; /* Set display to inline-block to control width */
+        }
+        summary::-webkit-details-marker {
+            display: none; /* Hide the default arrow marker in the summary */
+        }
+        details {
+            margin-bottom: 10px; /* Space between each collapsible section */
+            background-color: #FFFFFF; /* White background for expanded content */
+        }
+        pre, code {
+            white-space: pre-wrap; /* Allow wrapping of offending code */
+        }
+        svg {
+            margin-top: 30px; /* Leave 30px space below the logo */
+            margin-bottom: 30px; /* Leave 30px space below the logo */
+        }
+    </style>
+
+<script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=8a8c95ed792bfd2636800b62f21bc06235cc07f006a64c9e43122f94952fdd29';m.parentNode.insertBefore(a, m);
+})(window, document, 'script');</script>
+
+</head>
+
+<body>
+    <!-- Container for centering content -->
+    <div class="container">
+        <!-- SVG Logo -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="40" role="img" aria-labelledby="sllogo_title">
+            <title id="sllogo_title">SiteLint logo</title>
+            <path fill="#0070d1" d="M0 0h128v40H0z"></path>
+            <path fill="#fff" stroke-width="0" d="M16.505 24.92q6.576.36 8.904.36.552 0 .864-.312.336-.336.336-.888v-2.16h-5.52q-2.52 0-3.672-1.128-1.128-1.152-1.128-3.672v-.72q0-2.52 1.128-3.648 1.152-1.152 3.672-1.152h8.424v3.36h-7.464q-1.44 0-1.44 1.44v.48q0 1.44 1.44 1.44h4.32q2.352 0 3.456 1.104t1.104 3.456v1.2q0 2.352-1.104 3.456t-3.456 1.104q-1.224 0-2.592-.048l-2.208-.096q-2.448-.12-5.064-.336zm21.622-8.76V28.4h-4.2v-9h-1.8v-3.24zm-4.2-4.8h4.2v3.36h-4.2zM49.415 28.4q-2.328.24-4.56.24-1.632 0-2.616-.984-.984-.984-.984-2.616v-6.12h-1.44v-3.24h1.44l.48-2.88h3.72v2.88h3v3.24h-3v5.52q0 .36.24.6t.6.24h3.12zm6.352-9.96q-.96 0-.96.96v1.32h4.08V19.4q0-.96-.96-.96zm6.84 9.72q-4.632.48-8.4.48-1.632 0-2.616-.984-.984-.984-.984-2.616v-5.76q0-1.8 1.008-2.808 1.032-1.032 2.832-1.032h4.8q1.8 0 2.808 1.032 1.032 1.008 1.032 2.808v4.44h-8.28v.96q0 .36.24.6t.6.24q2.376 0 6.96-.36zm7.191-3.12h8.76v3.36h-13.08V11.6h4.32zm15.485-8.88V28.4h-4.2v-9h-1.8v-3.24zm-4.2-4.8h4.2v3.36h-4.2zm13.687 7.56q-1.271 0-2.88.48v9h-4.2V15.68h3.72l.24 1.2q1.129-.744 2.305-1.08 1.2-.36 2.016-.36h1.08q1.632 0 2.616.984.984.984.984 2.616v9.36h-4.2v-8.64q0-.36-.24-.6t-.6-.24zm16.942 9.48q-2.329.24-4.56.24-1.633 0-2.617-.984-.983-.984-.983-2.616v-6.12h-1.44v-3.24h1.44l.48-2.88h3.72v2.88h3v3.24h-3v5.52q0 .36.24.6t.6.24h3.12z"></path>
+        </svg>
+
+        <!-- Title -->
+        <h2>Accessibility Violations</h2>
+
+        <!-- Collapsible sections -->
+        <!-- 1. SVG without title or description -->
+        <details>
+            <summary>1. SVG without title or description</summary>
+            <p>This SVG lacks a title or description, which is important for accessibility.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;svg width="100" height="100"&gt;
+    &lt;circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red"&gt;
+&lt;/svg&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending SVG -->
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red"></circle>
+            </svg>
+        </details>
+
+        <!-- 2. Audio without captions -->
+        <details>
+            <summary>2. Audio without captions</summary>
+            <p>This audio element does not have captions, which can hinder accessibility for users who are deaf or hard of hearing.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;audio controls&gt;
+    &lt;source src="path_to_audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending audio element -->
+            <audio controls>
+                <source src="path_to_audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </details>
+
+        <!-- 3. Video without captions -->
+        <details>
+            <summary>3. Video without captions</summary>
+            <p>This video element does not have captions, which can hinder accessibility for users who are deaf or hard of hearing.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;video controls&gt;
+    &lt;source src="path_to_video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending video element -->
+            <video controls>
+                <source src="path_to_video.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </details>
+
+        <!-- 4. Image with alt text that includes the file name -->
+        <details>
+            <summary>4. Image with alt text that includes the file name</summary>
+            <p>This image uses alt text that includes the file name, which is not descriptive and does not provide useful information to screen readers.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;img src="https://via.placeholder.com/150" alt="placeholder_image"&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending image -->
+            <img src="https://via.placeholder.com/150" alt="placeholder_image">
+        </details>
+
+        <!-- 5. Alternative image description too generic -->
+        <details>
+            <summary>5. Alternative image description too generic</summary>
+            <p>This image has an alt text that is too generic and may not reflect what exactly is in the image.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;img src="https://via.placeholder.com/150" alt="This is an image"&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending image -->
+            <img src="https://via.placeholder.com/150" alt="This is an image">
+        </details>
+
+        <!-- 6. Element with aria-hidden="false" -->
+        <details>
+            <summary>6. Element with aria-hidden="false"</summary>
+            <p>This element should be hidden, but the aria-hidden attribute is set to "false" which contradicts the purpose.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;div aria-hidden="false"&gt;
+    &lt;p&gt;This element should be hidden, but it isn't.&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <div aria-hidden="false">
+                <p>This element should be hidden, but it isn't.</p>
+            </div>
+        </details>
+
+        <!-- 7. Element with role="dialog" and no defined accessible name -->
+        <details>
+            <summary>7. Element with role="dialog" and no defined accessible name</summary>
+            <p>This dialog lacks an accessible name, which can be challenging for screen readers.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;div role="dialog"&gt;
+    &lt;p&gt;This dialog lacks an accessible name.&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <div role="dialog">
+                <p>This dialog lacks an accessible name.</p>
+            </div>
+        </details>
+
+        <!-- 8. Word in all capital letters -->
+        <details>
+            <summary>8. Word in all capital letters</summary>
+            <p>All caps text can be harder to read and is generally discouraged for accessibility reasons.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;p&gt;THIS IS AN ALL CAPS EXAMPLE.&lt;/p&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending text -->
+            <p>THIS IS AN ALL CAPS EXAMPLE.</p>
+        </details>
+
+        <!-- 9. More than one element with role="contentinfo" -->
+        <details>
+            <summary>9. More than one element with role="contentinfo"</summary>
+            <p>Having multiple contentinfo elements can cause confusion for users navigating with screen readers.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;footer role="contentinfo"&gt;
+    &lt;p&gt;This is the first contentinfo section.&lt;/p&gt;
+&lt;/footer&gt;
+&lt;div role="contentinfo"&gt;
+    &lt;p&gt;This is the second contentinfo section, which is redundant.&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending elements -->
+            <footer role="contentinfo">
+                <p>This is the first contentinfo section.</p>
+            </footer>
+            <div role="contentinfo">
+                <p>This is the second contentinfo section, which is redundant.</p>
+            </div>
+        </details>
+
+        <!-- 10. Element with a defined background-image -->
+        <details>
+            <summary>10. Element with a defined background-image</summary>
+            <p>This element has a background image but lacks alternative text or indication of its purpose.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;div style="background-image: url('https://via.placeholder.com/300');"&gt;
+    &lt;p&gt;This is an element with a background image but no alternative text.&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <div style="background-image: url('https://via.placeholder.com/300');">
+                <p>This is an element with a background image but no alternative text.</p>
+            </div>
+        </details>
+
+        <!-- 11. Element with a duplicated attribute ID -->
+        <details>
+            <summary>11. Element with a duplicated attribute ID</summary>
+            <p>Elements with the same ID can cause conflicts in the document structure and hinder accessibility.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;div id="duplicateId"&gt;
+    &lt;p&gt;This element has a duplicated ID attribute.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id="duplicateId"&gt;
+    &lt;p&gt;This element also has a duplicated ID attribute.&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending elements -->
+            <div id="duplicateId">
+                <p>This element has a duplicated ID attribute.</p>
+            </div>
+            <div id="duplicateId">
+                <p>This element also has a duplicated ID attribute.</p>
+            </div>
+        </details>
+
+        <!-- 12. Element with an empty title attribute -->
+        <details>
+            <summary>12. Element with an empty title attribute</summary>
+            <p>This element has an empty title attribute, which is not useful for accessibility.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;p title=""&gt;This element has an empty title attribute.&lt;/p&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <p title="">This element has an empty title attribute.</p>
+        </details>
+
+        <!-- 13. Element with an attribute classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" -->
+        <details>
+            <summary>13. Element with an attribute classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"</summary>
+            <p>This class ID is associated with Flash content, which is no longer supported and can cause accessibility issues.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="400" height="300"&gt;
+    &lt;param name="movie" value="path_to_flash_movie.swf"&gt;
+&lt;/object&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="400" height="300">
+                <param name="movie" value="path_to_flash_movie.swf">
+            </object>
+        </details>
+
+        <!-- 14. Flickering content that flashes more than three times in a single second -->
+        <details>
+            <summary>14. Flickering content that flashes more than three times in a single second</summary>
+            <p>This content flickers rapidly and can cause discomfort and potential health risks, such as seizures, for some users.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;div style="background-color: red; animation: flicker 0.1s infinite;"&gt;
+    &lt;p&gt;This content flickers rapidly and can cause discomfort to some users.&lt;/p&gt;
+&lt;/div&gt;
+&lt;style&gt;
+    @keyframes flicker {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+&lt;/style&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending content -->
+            <div style="background-color: red; animation: flicker 0.1s infinite;">
+                <p>This content flickers rapidly and can cause discomfort to some users.</p>
+            </div>
+            <style>
+                @keyframes flicker {
+                    0% { opacity: 1; }
+                    50% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
+            </style>
+        </details>
+
+        <!-- 15. Content with defined font-style type italic for a text with length more than 80 characters -->
+        <details>
+            <summary>15. Content with defined font-style type italic for a text with length more than 80 characters</summary>
+            <p>This paragraph has a long text length styled with italics, which may cause difficulty in readability for some users.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;p style="font-style: italic;"&gt;
+    This is a paragraph with a long text length that is styled with italics. This may cause difficulty in readability for some users due to the length of the text and the style.
+&lt;/p&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending content -->
+        <p style="font-style: italic;">
+            This is a paragraph with a long text length that is styled with italics. This may cause difficulty in readability for some users due to the length of the text and the style.
+        </p>
+    </details>
+
+        <!-- 16. Missing an <h1> element -->
+        <details>
+            <summary>16. Missing an <h1> element</summary>
+            <p>Missing an <h1> element can cause issues with the document structure and accessibility.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>Missing an &lt;h1&gt; element</code></pre>
+            </div>
+        </details>
+
+        <!-- 17. Accessible names of sibling heading elements on the same level that are not unique -->
+        <details>
+            <summary>17. Accessible names of sibling heading elements on the same level that are not unique</summary>
+            <p>Sibling headings on the same level with identical names can cause confusion and make navigation difficult for screen reader users.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;h2&gt;Example Heading&lt;/h2&gt;
+&lt;h2&gt;Example Heading&lt;/h2&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending elements -->
+            <h2>Example Heading</h2>
+            <h2>Example Heading</h2>
+        </details>
+
+        <!-- 18. The <hr> element -->
+        <details>
+            <summary>18. The <hr> element</summary>
+            <p>An <hr> element can interrupt the flow of content and isn't necessary in most cases.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;hr /&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <hr />
+        </details>
+
+        <!-- 19. Defined style text-indent with value positioning element out of the viewport -->
+        <details>
+            <summary>19. Defined style text-indent with value positioning element out of the viewport</summary>
+            <p>This content is indented out of view, making it inaccessible to users.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;div style="text-indent: -9999px;"&gt;
+    &lt;p&gt;This content is indented out of view.&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <div style="text-indent: -9999px;">
+                <p>This content is indented out of view.</p>
+            </div>
+        </details>
+
+        <!-- 20. Dir attribute with a value other than rtl, ltr, or auto -->
+        <details>
+            <summary>20. Dir attribute with a value other than rtl, ltr, or auto</summary>
+            <p>This text has an incorrect dir attribute value, which can cause display and navigation issues.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;p dir="wrong-value"&gt;This text has an incorrect dir attribute value.&lt;/p&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending text -->
+            <p dir="wrong-value">This text has an incorrect dir attribute value.</p>
+        </details>
+
+        <!-- 21. Element that has identical <label> and title attribute -->
+        <details>
+            <summary>21. Element with identical <label> and title attribute</summary>
+            <p>This element's <label> and title attribute are identical, which can be redundant and unnecessary.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;label title="Username" for="username"&gt;Username&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <label title="Username" for="username">Username</label>
+            <input type="text" id="username" name="username">
+        </details>
+
+        <!-- 22. Link text with ambiguous purpose -->
+        <details>
+            <summary>22. Link text with ambiguous purpose</summary>
+            <p>This link text is ambiguous and doesn't provide a clear purpose or context for the user.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;a href="#"&gt;Click here&lt;/a&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending link -->
+            <a href="#">Click here</a>
+        </details>
+
+        <!-- 23. Link pointing to a location in a different language without hreflang attribute -->
+        <details>
+            <summary>23. Link pointing to a location in a different language without hreflang attribute</summary>
+            <p>This link points to a location in a different language without specifying the language code using the hreflang attribute.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;a href="https://es.example.com"&gt;Spanish website&lt;/a&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending link -->
+            <a href="https://es.example.com">Spanish website</a>
+        </details>
+
+        <!-- 24. Link with target="_blank" that doesn't indicate it's going to open a new window -->
+        <details>
+            <summary>24. Link with target="_blank" that doesn't indicate it's going to open a new window</summary>
+            <p>This link opens in a new window using target="_blank" but doesn't provide any indication of this to the user.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;a href="https://www.example.com" target="_blank"&gt;Example&lt;/a&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending link -->
+            <a href="https://www.example.com" target="_blank">Example</a>
+        </details>
+
+        <!-- 25. Two links with the same text that point to different locations -->
+        <details>
+            <summary>25. Two links with the same text that point to different locations</summary>
+            <p>Two links with the same text point to different locations, which can be confusing for users.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;a href="https://www.example.com"&gt;Visit Us&lt;/a&gt;
+&lt;a href="https://www.example2.com"&gt;Visit Us&lt;/a&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending links -->
+            <a href="https://www.example.com">Visit Us</a>
+            <a href="https://www.example2.com">Visit Us</a>
+        </details>
+
+        <!-- 26. More than one <main> landmark -->
+        <details>
+            <summary>26. More than one <main> landmark</summary>
+            <p>Having multiple main elements can cause confusion for users navigating with screen readers.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;main&gt;
+    &lt;p&gt;This is the first main landmark.&lt;/p&gt;
+&lt;/main&gt;
+&lt;main&gt;
+    &lt;p&gt;This is the second main landmark.&lt;/p&gt;
+&lt;/main&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending elements -->
+            <main>
+                <p>This is the first main landmark.</p>
+            </main>
+            <main>
+                <p>This is the second main landmark.</p>
+            </main>
+        </details>
+
+        <!-- 27. Main landmark element not contained within other landmarks -->
+        <details>
+            <summary>27. Main landmark element not contained within other landmarks</summary>
+            <p>The main element should be contained within other landmarks to follow best practices for accessibility.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;main&gt;
+    &lt;p&gt;This main element is not contained within other landmarks.&lt;/p&gt;
+&lt;/main&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <main>
+                <p>This main element is not contained within other landmarks.</p>
+            </main>
+        </details>
+
+        <!-- 28. Font size smaller than 10px -->
+        <details>
+            <summary>28. Font size smaller than 10px</summary>
+            <p>Small font sizes can make text difficult to read for users with visual impairments.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;p style="font-size: 8px;"&gt;This text is too small and can be difficult to read.&lt;/p&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending content -->
+            <p style="font-size: 8px;">This text is too small and can be difficult to read.</p>
+        </details>
+
+        <!-- 29. One of img, area, or input[type="image"] has not defined alt attribute -->
+        <details>
+            <summary>29. One of img, area, or input[type="image"] has not defined an alt attribute</summary>
+            <p>This input element of type image does not have an alt attribute, which is important for accessibility.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;input type="image" src="https://via.placeholder.com/100" value="Submit"&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <input type="image" src="https://via.placeholder.com/100" value="Submit">
+        </details>
+
+        <!-- 30. HTML anchor element without href attribute -->
+        <details>
+            <summary>30. HTML anchor element without href attribute</summary>
+            <p>This anchor element does not have an href attribute, which is necessary to indicate the link's destination.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;a&gt;This is an anchor element without an href attribute.&lt;/a&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <a>This is an anchor element without an href attribute.</a>
+        </details>
+
+        <!-- 31. Focusable element defined with aria-hidden="true" or role="presentation" -->
+        <details>
+            <summary>31. Focusable element defined with aria-hidden="true" or role="presentation"</summary>
+            <p>This focusable element should not have aria-hidden="true" or role="presentation," as it contradicts the purpose of being focusable.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;button aria-hidden="true"&gt;Button&lt;/button&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <button aria-hidden="true">Button</button>
+        </details>
+
+        <!-- 32. Section on the page should have a scrollbar horizontally and vertically -->
+        <details>
+            <summary>32. Section on the page should have a scrollbar horizontally and vertically</summary>
+            <p>This section is set to have scrollbars both horizontally and vertically, which can be disruptive to user experience.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;div style="width: 100px; height: 100px; overflow: scroll;"&gt;
+    &lt;p&gt;Scrollable content horizontally and vertically.&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending content -->
+            <div style="width: 100px; height: 100px; overflow: scroll;">
+                <p>Scrollable content horizontally and vertically.</p>
+            </div>
+        </details>
+
+        <!-- 33. Incorrect URL defined in an anchor href attribute -->
+        <details>
+            <summary>33. Incorrect URL defined in an anchor href attribute</summary>
+            <p>This anchor element has an incorrect URL in the href attribute, which can confuse users.</p>
+            <div>
+                <!-- Offending code -->
+                <pre><code>&lt;a href="htp://www.incorrect-url.com"&gt;Incorrect URL&lt;/a&gt;
+                </code></pre>
+            </div>
+            <!-- Actual offending element -->
+            <a href="htp://www.incorrect-url.com">Incorrect URL</a>
+        </details>
+    </div>
+</body>
+
+</html>
