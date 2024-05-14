@@ -3,7 +3,7 @@
 
 <head>
 
-<script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=56b0fc0ff79a0a19cfc095d749a581fa977f9eafc4f303c532c9faa003f3acc9';m.parentNode.insertBefore(a, m);
+<script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=ad93d600f32f14362cedcd1fd0667419f6626d526fe9e3089cd36efb85832bf5';m.parentNode.insertBefore(a, m);
 })(window, document, 'script');</script>
 
 <!-- Google tag (gtag.js) -->
@@ -15,7 +15,6 @@
 
   gtag('config', 'G-N8346FG3KJ');
 </script>
-
 
     <meta charset="UTF-8">
     <title>Accessibility Problems Demonstration</title>
@@ -259,7 +258,16 @@
         <div>
             <p>Example code:</p>
             <pre>
-&lt;p class="flicker"&gt;This text flickers rapidly.&lt;/p&gt;
+                <p class="flicker" style="animation: flicker 0.1s infinite;">This text flickers rapidly.</p>
+
+                <style>
+                    @keyframes flicker {
+                        0% { opacity: 1; }
+                        50% { opacity: 0; }
+                        100% { opacity: 1; }
+                    }
+                </style>
+                
             </pre>
             <p class="flicker" style="animation: flicker 0.2s infinite;">This text flickers rapidly.</p>
         </div>
