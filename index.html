@@ -3,7 +3,7 @@
 
 <head>
 
-<script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=27e4d9f2b7d4480b96d6b5ad559a77fd64f633d73c9df60f5f306370192940ab';m.parentNode.insertBefore(a, m);
+<script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=0e123fbf6bcfc32e9949cda1eafcba759b5e14f97e27449c8d099a9cd80e5673';m.parentNode.insertBefore(a, m);
 })(window, document, 'script');</script>
 
 <!-- Google tag (gtag.js) -->
@@ -15,7 +15,6 @@
 
   gtag('config', 'G-N8346FG3KJ');
 </script>
-
 
     <meta charset="UTF-8">
     <title>Accessibility Problems Demonstration</title>
@@ -125,7 +124,7 @@
             <pre>
 &lt;img src="image-file.jpg" alt="image-file"&gt;
             </pre>
-            <img src="https://via.placeholder.com/150" alt="image-file">
+            <img src="https://via.placeholder.com/150" alt="150">
         </div>
     </details>
 
@@ -135,9 +134,9 @@
         <div>
             <p>Example code:</p>
             <pre>
-&lt;img src="image.jpg" alt="Image"&gt;
+&lt;img src="https://tammaninc.com/wp-content/uploads/2021/03/Ilus-Digital-Art-e1620161286289.png" alt="Digital Art"&gt;
             </pre>
-            <img src="https://via.placeholder.com/150" alt="Image">
+            <img src="https://tammaninc.com/wp-content/uploads/2021/03/Ilus-Digital-Art-e1620161286289.png" alt="Digital Art">
         </div>
     </details>
 
@@ -155,210 +154,37 @@
         </div>
     </details>
 
-    <!-- 7. Element with role="dialog" and no defined accessible name -->
+    <!-- 7. Element with tabindex="0" -->
     <details>
-        <summary>7. Element with role="dialog" and no defined accessible name</summary>
+        <summary>7. Element with tabindex="0"</summary>
         <div>
             <p>Example code:</p>
             <pre>
-&lt;div role="dialog"&gt;This element has role="dialog" but no accessible name.&lt;/div&gt;
+&lt;div tabindex="0"&gt;This element has tabindex="0".&lt;/div&gt;
             </pre>
-            <div role="dialog">
-                This element has role="dialog" but no accessible name.
+            <div tabindex="0">
+                This element has tabindex="0".
             </div>
         </div>
     </details>
 
-    <!-- 8. Word in all capital letters -->
+    <!-- 8. Element with low contrast text -->
     <details>
-        <summary>8. Word in all capital letters</summary>
+        <summary>8. Element with low contrast text</summary>
         <div>
             <p>Example code:</p>
             <pre>
-&lt;p&gt;THIS IS A SENTENCE IN ALL CAPITAL LETTERS.&lt;/p&gt;
+&lt;p style="color: #666"&gt;This paragraph has low contrast text.&lt;/p&gt;
             </pre>
-            <p>THIS IS A SENTENCE IN ALL CAPITAL LETTERS.</p>
-        </div>
-    </details>
-
-    <!-- 9. More than one element with role="contentinfo" -->
-    <details>
-        <summary>9. More than one element with role="contentinfo"</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;footer role="contentinfo"&gt;Footer contentinfo 1&lt;/footer&gt;
-&lt;footer role="contentinfo"&gt;Footer contentinfo 2&lt;/footer&gt;
-            </pre>
-            <footer role="contentinfo">
-                Footer contentinfo 1
-            </footer>
-            <footer role="contentinfo">
-                Footer contentinfo 2
-            </footer>
-        </div>
-    </details>
-
-    <!-- 10. Element with a defined background-image -->
-    <details>
-        <summary>10. Element with a defined background-image</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;div style="background-image: url('background-image.jpg');"&gt;Background image element.&lt;/div&gt;
-            </pre>
-            <div style="background-image: url('background-image.jpg');">
-                Background image element.
-            </div>
-        </div>
-    </details>
-
-    <!-- 11. Element with a duplicated attribute ID -->
-    <details>
-        <summary>11. Element with a duplicated attribute ID</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;div id="duplicate"&gt;Element with ID "duplicate"&lt;/div&gt;
-&lt;p id="duplicate"&gt;Another element with the same ID "duplicate"&lt;/p&gt;
-            </pre>
-            <div id="duplicate">Element with ID "duplicate"</div>
-            <p id="duplicate">Another element with the same ID "duplicate"</p>
-        </div>
-    </details>
-
-    <!-- 12. Element with an empty title attribute -->
-    <details>
-        <summary>12. Element with an empty title attribute</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;p title=""&gt;This paragraph has an empty title attribute.&lt;/p&gt;
-            </pre>
-            <p title="">This paragraph has an empty title attribute.</p>
-        </div>
-    </details>
-
-    <!-- 13. Element with an attribute classid -->
-    <details>
-        <summary>13. Element with an attribute classid</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"&gt;This object has an attribute classid.&lt;/object&gt;
-            </pre>
-            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
-                This object has an attribute classid.
-            </object>
-        </div>
-    </details>
-
-    <!-- 14. Flickering content that flashes more than three times in a single second -->
-    <details>
-        <summary>14. Flickering content that flashes more than three times in a single second</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;p class="flicker"&gt;This text flickers rapidly.&lt;/p&gt;
-            </pre>
-            <p class="flicker" style="animation: flicker 0.2s infinite;">This text flickers rapidly.</p>
-        </div>
-    </details>
-
-    <!-- 15. Content with defined font-style type italic for a text with length more than 80 characters -->
-    <details>
-        <summary>15. Content with defined font-style type italic for a text with length more than 80 characters</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;p style="font-style: italic;"&gt;This paragraph is more than 80 characters long and is styled in italics, which can be harder to read.&lt;/p&gt;
-            </pre>
-            <p style="font-style: italic;">
-                This paragraph is more than 80 characters long and is styled in italics, which can be harder to read.
+            <p style="color: #666">
+                This paragraph has low contrast text.
             </p>
         </div>
     </details>
 
-    <!-- 16. Missing an element -->
+    <!-- 9. Element with ambiguous link text -->
     <details>
-        <summary>16. Missing an element</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-<!-- Missing an element like a header or main section -->
-            </pre>
-        </div>
-    </details>
-
-    <!-- 17. Accessible names of sibling heading elements on the same level that are not unique -->
-    <details>
-        <summary>17. Accessible names of sibling heading elements on the same level that are not unique</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;h2&gt;Heading&lt;/h2&gt;
-&lt;h2&gt;Heading&lt;/h2&gt;
-            </pre>
-            <h2>Heading</h2>
-            <h2>Heading</h2>
-        </div>
-    </details>
-
-    <!-- 18. The <hr/> element -->
-    <details>
-        <summary>18. The &lt;hr/&gt; element</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;hr/&gt;
-            </pre>
-            <hr />
-        </div>
-    </details>
-
-    <!-- 19. Defined style text-indent with value positioning element out of the viewport -->
-    <details>
-        <summary>19. Defined style text-indent with value positioning element out of the viewport</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;p class="out-of-viewport"&gt;This paragraph is visually hidden due to negative text-indent.&lt;/p&gt;
-            </pre>
-            <p class="out-of-viewport" style="text-indent: -9999px;">
-                This paragraph is visually hidden due to negative text-indent.
-            </p>
-        </div>
-    </details>
-
-    <!-- 20. Dir attribute with a value other than rtl, ltr, or auto -->
-    <details>
-        <summary>20. Dir attribute with a value other than rtl, ltr, or auto</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;p dir="wrong"&gt;This paragraph has an incorrect dir attribute value.&lt;/p&gt;
-            </pre>
-            <p dir="wrong">This paragraph has an incorrect dir attribute value.</p>
-        </div>
-    </details>
-
-    <!-- 21. Element with identical <label> and title attribute -->
-    <details>
-        <summary>21. Element with identical &lt;label&gt; and title attribute</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;label for="example" title="Label Example"&gt;Label Example&lt;/label&gt;
-&lt;input type="text" id="example"&gt;
-            </pre>
-            <label for="example" title="Label Example">Label Example</label>
-            <input type="text" id="example">
-        </div>
-    </details>
-
-    <!-- 22. Link text with ambiguous purpose -->
-    <details>
-        <summary>22. Link text with ambiguous purpose</summary>
+        <summary>9. Element with ambiguous link text</summary>
         <div>
             <p>Example code:</p>
             <pre>
@@ -368,146 +194,393 @@
         </div>
     </details>
 
-    <!-- 23. Link pointing to a location in a different language without hreflang attribute -->
+    <!-- 10. Element with duplicate IDs -->
     <details>
-        <summary>23. Link pointing to a location in a different language without hreflang attribute</summary>
+        <summary>10. Element with duplicate IDs</summary>
         <div>
             <p>Example code:</p>
             <pre>
-&lt;a href="https://www.wikipedia.de"&gt;Wikipedia Germany&lt;/a&gt;
+&lt;div id="unique-id"&gt;First element with the same ID&lt;/div&gt;
+&lt;div id="unique-id"&gt;Second element with the same ID&lt;/div&gt;
             </pre>
-            <a href="https://www.wikipedia.de">Wikipedia Germany</a>
-        </div>
-    </details>
-
-    <!-- 24. Link with target="_blank" that doesn't indicate it's going to open a new window -->
-    <details>
-        <summary>24. Link with target="_blank" that doesn't indicate it's going to open a new window</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;a href="https://www.example.com" target="_blank"&gt;Example&lt;/a&gt;
-            </pre>
-            <a href="https://www.example.com" target="_blank">Example</a>
-        </div>
-    </details>
-
-    <!-- 25. Two links with the same text that point to different locations -->
-    <details>
-        <summary>25. Two links with the same text that point to different locations</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;a href="https://www.example1.com"&gt;Same link text&lt;/a&gt;
-&lt;a href="https://www.example2.com"&gt;Same link text&lt;/a&gt;
-            </pre>
-            <a href="https://www.example1.com">Same link text</a>
-            <a href="https://www.example2.com">Same link text</a>
-        </div>
-    </details>
-
-    <!-- 26. More than one <main> landmark -->
-    <details>
-        <summary>26. More than one &lt;main&gt; landmark</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;main&gt;Main content 1&lt;/main&gt;
-&lt;main&gt;Main content 2&lt;/main&gt;
-            </pre>
-            <main>Main content 1</main>
-            <main>Main content 2</main>
-        </div>
-    </details>
-
-    <!-- 27. Main landmark element not contained within other landmarks -->
-    <details>
-        <summary>27. Main landmark element not contained within other landmarks</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;main&gt;Main content not contained within other landmarks.&lt;/main&gt;
-            </pre>
-            <main>Main content not contained within other landmarks.</main>
-        </div>
-    </details>
-
-    <!-- 28. Font size smaller than 10px -->
-    <details>
-        <summary>28. Font size smaller than 10px</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;p class="small-font"&gt;This paragraph has a font size smaller than 10px.&lt;/p&gt;
-            </pre>
-            <p class="small-font" style="font-size: 8px;">
-                This paragraph has a font size smaller than 10px.
-            </p>
-        </div>
-    </details>
-
-    <!-- 29. One of <img>, <area>, or <input type="image"> without a defined alt attribute -->
-    <details>
-        <summary>29. One of &lt;img&gt;, &lt;area&gt;, or &lt;input type="image"&gt; without a defined alt attribute</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;img src="image.jpg"&gt;
-            </pre>
-            <img src="image.jpg">
-        </div>
-    </details>
-
-    <!-- 30. HTML anchor element without href attribute -->
-    <details>
-        <summary>30. HTML anchor element without href attribute</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;a&gt;Anchor element without href attribute&lt;/a&gt;
-            </pre>
-            <a>Anchor element without href attribute</a>
-        </div>
-    </details>
-
-    <!-- 31. Focusable element defined with aria-hidden="true" or role="presentation" -->
-    <details>
-        <summary>31. Focusable element defined with aria-hidden="true" or role="presentation"</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;button aria-hidden="true"&gt;Hidden button&lt;/button&gt;
-            </pre>
-            <button aria-hidden="true">Hidden button</button>
-        </div>
-    </details>
-
-    <!-- 32. Section on the page should have a scrollbar horizontally and vertically -->
-    <details>
-        <summary>32. Section on the page should have a scrollbar horizontally and vertically</summary>
-        <div>
-            <p>Example code:</p>
-            <pre>
-&lt;div class="scroll"&gt;This section has both horizontal and vertical scrollbars.&lt;/div&gt;
-            </pre>
-            <div class="scroll" style="overflow: scroll; height: 200px; width: 200px;">
-                This section has both horizontal and vertical scrollbars.
+            <div id="unique-id">
+                First element with the same ID
+            </div>
+            <div id="unique-id">
+                Second element with the same ID
             </div>
         </div>
     </details>
 
-    <!-- 33. Incorrect URL defined in an anchor href attribute -->
+    <!-- 11. Form without labels -->
     <details>
-        <summary>33. Incorrect URL defined in an anchor href attribute</summary>
+        <summary>11. Form without labels</summary>
         <div>
             <p>Example code:</p>
             <pre>
-&lt;a href="htp://incorrect-url.com"&gt;Incorrect URL&lt;/a&gt;
+&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="password" name="password"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
             </pre>
-            <a href="htp://incorrect-url.com">Incorrect URL</a>
+            <form action="#" method="post">
+                <input type="text" name="username">
+                <input type="password" name="password">
+                <input type="submit" value="Submit">
+            </form>
         </div>
     </details>
 
+    <!-- 12. Form without associated labels -->
+    <details>
+        <summary>12. Form without associated labels</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username"&gt;
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username">
+                <label for="password">Password:</label>
+                <input type="password" id="password">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </details>
+
+    <!-- 13. Input without proper type attribute -->
+    <details>
+        <summary>13. Input without proper type attribute</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;input name="creditcard" value=""&gt;
+            </pre>
+            <input name="creditcard" value="">
+        </div>
+    </details>
+
+    <!-- 14. Element with non-descriptive link text -->
+    <details>
+        <summary>14. Element with non-descriptive link text</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;a href="#"&gt;More info&lt;/a&gt;
+            </pre>
+            <a href="#">More info</a>
+        </div>
+    </details>
+
+    <!-- 15. Element with missing alternative text -->
+    <details>
+        <summary>15. Element with missing alternative text</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;img src="example.jpg"&gt;
+            </pre>
+            <img src="https://via.placeholder.com/150">
+        </div>
+    </details>
+
+    <!-- 16. Element with inappropriate use of color alone -->
+    <details>
+        <summary>16. Element with inappropriate use of color alone</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;p style="color: red"&gt;Dangerous content!&lt;/p&gt;
+            </pre>
+            <p style="color: red">
+                Dangerous content!
+            </p>
+        </div>
+    </details>
+
+    <!-- 17. Form without submit button -->
+    <details>
+        <summary>17. Form without submit button</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="password" name="password"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <input type="text" name="username">
+                <input type="password" name="password">
+            </form>
+        </div>
+    </details>
+
+    <!-- 18. Form with multiple submit buttons -->
+    <details>
+        <summary>18. Form with multiple submit buttons</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="password" name="password"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+    &lt;input type="submit" value="Cancel"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <input type="text" name="username">
+                <input type="password" name="password">
+                <input type="submit" value="Submit">
+                <input type="submit" value="Cancel">
+            </form>
+        </div>
+    </details>
+
+    <!-- 19. Table without proper header -->
+    <details>
+        <summary>19. Table without proper header</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John Doe&lt;/td&gt;
+        &lt;td&gt;johndoe@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Jane Smith&lt;/td&gt;
+        &lt;td&gt;janesmith@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+            </pre>
+            <table>
+                <tr>
+                    <td>John Doe</td>
+                    <td>johndoe@example.com</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>janesmith@example.com</td>
+                </tr>
+            </table>
+        </div>
+    </details>
+
+    <!-- 20. Element with ambiguous label text -->
+    <details>
+        <summary>20. Element with ambiguous label text</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;label&gt;Name:&lt;/label&gt;
+&lt;input type="text"&gt;
+            </pre>
+            <label>Name:</label>
+            <input type="text">
+        </div>
+    </details>
+
+    <!-- 21. Form without accessible error handling -->
+    <details>
+        <summary>21. Form without accessible error handling</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="username" required&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <input type="text" name="username" required>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </details>
+
+    <!-- 22. Element with missing role attribute -->
+    <details>
+        <summary>22. Element with missing role attribute</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;div class="menu"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Home&lt;/li&gt;
+        &lt;li&gt;About&lt;/li&gt;
+        &lt;li&gt;Contact&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+            </pre>
+            <div class="menu">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </details>
+
+    <!-- 23. Element with inappropriate use of aria-live -->
+    <details>
+        <summary>23. Element with inappropriate use of aria-live</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;div aria-live="assertive"&gt;Important notification here&lt;/div&gt;
+            </pre>
+            <div aria-live="assertive">
+                Important notification here
+            </div>
+        </div>
+    </details>
+
+    <!-- 24. Element with missing form input association -->
+    <details>
+        <summary>24. Element with missing form input association</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text">
+            </form>
+        </div>
+    </details>
+
+    <!-- 25. Element with missing alt attribute -->
+    <details>
+        <summary>25. Element with missing alt attribute</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;img src="example.jpg"&gt;
+            </pre>
+            <img src="https://via.placeholder.com/150">
+        </div>
+    </details>
+
+    <!-- 26. Element with inappropriate use of role -->
+    <details>
+        <summary>26. Element with inappropriate use of role</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;span role="button"&gt;Click me&lt;/span&gt;
+            </pre>
+            <span role="button">Click me</span>
+        </div>
+    </details>
+
+    <!-- 27. Element with non-specific link text -->
+    <details>
+        <summary>27. Element with non-specific link text</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;a href="#"&gt;Learn more&lt;/a&gt;
+            </pre>
+            <a href="#">Learn more</a>
+        </div>
+    </details>
+
+    <!-- 28. Form without accessible validation -->
+    <details>
+        <summary>28. Form without accessible validation</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="username" pattern="[A-Za-z]+" title="Only letters allowed"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <input type="text" name="username" pattern="[A-Za-z]+" title="Only letters allowed">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </details>
+
+    <!-- 29. Element with redundant title attribute -->
+    <details>
+        <summary>29. Element with redundant title attribute</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;span title="This is a span element"&gt;Span element&lt;/span&gt;
+            </pre>
+            <span title="This is a span element">Span element</span>
+        </div>
+    </details>
+
+    <!-- 30. Element with ambiguous or non-specific role -->
+    <details>
+        <summary>30. Element with ambiguous or non-specific role</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;div role="button"&gt;Click me&lt;/div&gt;
+            </pre>
+            <div role="button">Click me</div>
+        </div>
+    </details>
+
+    <!-- 31. Element with inappropriate use of tabindex -->
+    <details>
+        <summary>31. Element with inappropriate use of tabindex</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;div tabindex="0"&gt;This element should not receive keyboard focus&lt;/div&gt;
+            </pre>
+            <div tabindex="0">This element should not receive keyboard focus</div>
+        </div>
+    </details>
+
+    <!-- 32. Element with missing language attribute -->
+    <details>
+        <summary>32. Element with missing language attribute</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;This paragraph is missing the language attribute.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+            <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Document</title>
+                </head>
+                <body>
+                    <p>This paragraph is missing the language attribute.</p>
+                </body>
+            </html>
+        </div>
+    </details>
 </body>
 
 </html>
