@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+ <script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=2b6faee86a35f5db46f7be74851bee6840b706d4f0ccc8749c6e8c8e9e122408';m.parentNode.insertBefore(a, m);
+})(window, document, 'script');</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N8346FG3KJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N8346FG3KJ');
+</script>
+
+    <meta charset="UTF-8">
+    <title>Accessibility Problems Demonstration</title>
+    <style>
+        /* Style for the entire page */
+        body {
+            font-family: Arial, sans-serif; /* Use Arial for all visible text */
+            margin-left: 20px; /* Margin on the left side of the page */
+        }
+        /* Style for accordion summary elements */
+        details summary {
+            background-color: #F5F5F5; /* Light gray bar behind text */
+            padding: 5px; /* Padding for better visibility */
+            cursor: pointer; /* Cursor change on hover */
+            border-radius: 3px; /* Slight rounding of corners */
+        }
+        /* Style for expanded content areas */
+        details[open] > div {
+            background-color: #FFFFEB; /* Pale yellow background */
+            padding: 10px; /* Padding for expanded content areas */
+            border: 1px solid #d3d3d3; /* Light gray border for expanded content areas */
+            border-radius: 3px; /* Slight rounding of corners */
+        }
+    </style>
+    <script>
+        // JavaScript to close all accordions when one is closed
+        document.addEventListener('DOMContentLoaded', function() {
+            const detailsElements = document.querySelectorAll('details');
+            
+            detailsElements.forEach(function(detail) {
+                detail.addEventListener('toggle', function() {
+                    if (!detail.open) {
+                        // Close all accordions when one is closed
+                        detailsElements.forEach(function(otherDetail) {
+                            otherDetail.open = false;
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- SiteLint logo at the top of the page -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="40" role="img" aria-labelledby="sllogo_title">
+        <title id="sllogo_title">SiteLint logo</title>
+        <path fill="#0070d1" d="M0 0h128v40H0z"></path>
+        <path fill="#fff" stroke-width="0" d="M16.505 24.92q6.576.36 8.904.36.552 0 .864-.312.336-.336.336-.888v-2.16h-5.52q-2.52 0-3.672-1.128-1.128-1.152-1.128-3.672v-.72q0-2.52 1.128-3.648 1.152-1.152 3.672-1.152h8.424v3.36h-7.464q-1.44 0-1.44 1.44v.48q0 1.44 1.44 1.44h4.32q2.352 0 3.456 1.104t1.104 3.456v1.2q0 2.352-1.104 3.456t-3.456 1.104q-1.224 0-2.592-.048l-2.208-.096q-2.448-.12-5.064-.336zm21.622-8.76V28.4h-4.2v-9h-1.8v-3.24zm-4.2-4.8h4.2v3.36h-4.2zM49.415 28.4q-2.328.24-4.56.24-1.632 0-2.616-.984-.984-.984-.984-2.616v-6.12h-1.44v-3.24h1.44l.48-2.88h3.72v2.88h3v3.24h-3v5.52q0 .36.24.6t.6.24h3.12zm6.352-9.96q-.96 0-.96.96v1.32h4.08V19.4q0-.96-.96-.96zm6.84 9.72q-4.632.48-8.4.48-1.632 0-2.616-.984-.984-.984-.984-2.616v-5.76q0-1.8 1.008-2.808 1.032-1.032 2.832-1.032h4.8q1.8 0 2.808 1.032 1.032 1.008 1.032 2.808v4.44h-8.28v.96q0 .36.24.6t.6.24q2.376 0 6.96-.36zm7.191-3.12h8.76v3.36h-13.08V11.6h4.32zm15.485-8.88V28.4h-4.2v-9h-1.8v-3.24zm-4.2-4.8h4.2v3.36h-4.2zm13.687 7.56q-1.271 0-2.88.48v9h-4.2V15.68h3.72l.24 1.2q1.129-.744 2.305-1.08 1.2-.36 2.016-.36h1.08q1.632 0 2.616.984.984.984.984 2.616v9.36h-4.2v-8.64q0-.36-.24-.6t-.6-.24zm16.942 9.48q-2.329.24-4.56.24-1.633 0-2.617-.984-.983-.984-.983-2.616v-6.12h-1.44v-3.24h1.44l.48-2.88h3.72v2.88h3v3.24h-3v5.52q0 .36.24.6t.6.24h3.12z"></path>
+    </svg>
+
+    <h1>Accessibility Problems Demonstration</h1>
+    
+    <!-- 1. SVG without title or description -->
+    <details>
+        <summary>1. SVG without title or description</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;svg width="100" height="100"&gt;
+    &lt;circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" /&gt;
+&lt;/svg&gt;
+            </pre>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+            </svg>
+        </div>
+    </details>
+
+    <!-- 2. Audio without captions -->
+    <details>
+        <summary>2. Audio without captions</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;audio controls&gt;
+    &lt;source src="audio-file.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+            </pre>
+            <audio controls>
+                <source src="audio-file.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </details>
+
+    <!-- 3. Video without captions -->
+    <details>
+        <summary>3. Video without captions</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;video controls&gt;
+    &lt;source src="video-file.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+            </pre>
+            <video controls>
+                <source src="video-file.mp4" type="video/mp4">
+            </video>
+        </div>
+    </details>
+
+    <!-- 4. Image with alt text that includes the file name -->
+    <details>
+        <summary>4. Image with alt text that includes the file name</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;img src="image-file.jpg" alt="image-file"&gt;
+            </pre>
+            <img src="https://via.placeholder.com/150" alt="150">
+        </div>
+    </details>
+
+    <!-- 5. Alternative image description too generic -->
+    <details>
+        <summary>5. Alternative image description too generic</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;img src="https://tammaninc.com/wp-content/uploads/2021/03/Ilus-Digital-Art-e1620161286289.png" alt="Digital Art"&gt;
+            </pre>
+            <img src="https://tammaninc.com/wp-content/uploads/2021/03/Ilus-Digital-Art-e1620161286289.png" alt="Digital Art">
+        </div>
+    </details>
+
+    <!-- 6. Element with aria-hidden="false" -->
+    <details>
+        <summary>6. Element with aria-hidden="false"</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;div aria-hidden="false"&gt;This element has aria-hidden="false".&lt;/div&gt;
+            </pre>
+            <div aria-hidden="false">
+                This element has aria-hidden="false".
+            </div>
+        </div>
+    </details>
+
+    <!-- 7. Element with tabindex="0" -->
+    <details>
+        <summary>7. Element with tabindex="0"</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;div tabindex="0"&gt;This element has tabindex="0".&lt;/div&gt;
+            </pre>
+            <div tabindex="0">
+                This element has tabindex="0".
+            </div>
+        </div>
+    </details>
+
+    <!-- 8. Element with low contrast text -->
+    <details>
+        <summary>8. Element with low contrast text</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;p style="color: #666"&gt;This paragraph has low contrast text.&lt;/p&gt;
+            </pre>
+            <p style="color: #666">
+                This paragraph has low contrast text.
+            </p>
+        </div>
+    </details>
+
+    <!-- 9. Element with ambiguous link text -->
+    <details>
+        <summary>9. Element with ambiguous link text</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;a href="#"&gt;Click here&lt;/a&gt;
+            </pre>
+            <a href="#">Click here</a>
+        </div>
+    </details>
+
+    <!-- 10. Element with duplicate IDs -->
+    <details>
+        <summary>10. Element with duplicate IDs</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;div id="unique-id"&gt;First element with the same ID&lt;/div&gt;
+&lt;div id="unique-id"&gt;Second element with the same ID&lt;/div&gt;
+            </pre>
+            <div id="unique-id">
+                First element with the same ID
+            </div>
+            <div id="unique-id">
+                Second element with the same ID
+            </div>
+        </div>
+    </details>
+
+    <!-- 11. Form without labels -->
+    <details>
+        <summary>11. Form without labels</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="password" name="password"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <input type="text" name="username">
+                <input type="password" name="password">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </details>
+
+    <!-- 12. Form without associated labels -->
+    <details>
+        <summary>12. Form without associated labels</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username"&gt;
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username">
+                <label for="password">Password:</label>
+                <input type="password" id="password">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </details>
+
+    <!-- 13. Input without proper type attribute -->
+    <details>
+        <summary>13. Input without proper type attribute</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;input name="creditcard" value=""&gt;
+            </pre>
+            <input name="creditcard" value="">
+        </div>
+    </details>
+
+    <!-- 14. Element with non-descriptive link text -->
+    <details>
+        <summary>14. Element with non-descriptive link text</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;a href="#"&gt;More info&lt;/a&gt;
+            </pre>
+            <a href="#">More info</a>
+        </div>
+    </details>
+
+    <!-- 15. Element with missing alternative text -->
+    <details>
+        <summary>15. Element with missing alternative text</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;img src="example.jpg"&gt;
+            </pre>
+            <img src="https://via.placeholder.com/150">
+        </div>
+    </details>
+
+    <!-- 16. Element with inappropriate use of color alone -->
+    <details>
+        <summary>16. Element with inappropriate use of color alone</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;p style="color: red"&gt;Dangerous content!&lt;/p&gt;
+            </pre>
+            <p style="color: red">
+                Dangerous content!
+            </p>
+        </div>
+    </details>
+
+    <!-- 17. Form without submit button -->
+    <details>
+        <summary>17. Form without submit button</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="password" name="password"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <input type="text" name="username">
+                <input type="password" name="password">
+            </form>
+        </div>
+    </details>
+
+    <!-- 18. Form with multiple submit buttons -->
+    <details>
+        <summary>18. Form with multiple submit buttons</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="password" name="password"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+    &lt;input type="submit" value="Cancel"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <input type="text" name="username">
+                <input type="password" name="password">
+                <input type="submit" value="Submit">
+                <input type="submit" value="Cancel">
+            </form>
+        </div>
+    </details>
+
+    <!-- 19. Table without proper header -->
+    <details>
+        <summary>19. Table without proper header</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John Doe&lt;/td&gt;
+        &lt;td&gt;johndoe@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Jane Smith&lt;/td&gt;
+        &lt;td&gt;janesmith@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+            </pre>
+            <table>
+                <tr>
+                    <td>John Doe</td>
+                    <td>johndoe@example.com</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>janesmith@example.com</td>
+                </tr>
+            </table>
+        </div>
+    </details>
+
+    <!-- 20. Element with ambiguous label text -->
+    <details>
+        <summary>20. Element with ambiguous label text</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;label&gt;Name:&lt;/label&gt;
+&lt;input type="text"&gt;
+            </pre>
+            <label>Name:</label>
+            <input type="text">
+        </div>
+    </details>
+
+    <!-- 21. Form without accessible error handling -->
+    <details>
+        <summary>21. Form without accessible error handling</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="username" required&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <input type="text" name="username" required>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </details>
+
+    <!-- 22. Element with missing role attribute -->
+    <details>
+        <summary>22. Element with missing role attribute</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;div class="menu"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Home&lt;/li&gt;
+        &lt;li&gt;About&lt;/li&gt;
+        &lt;li&gt;Contact&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+            </pre>
+            <div class="menu">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </details>
+
+    <!-- 23. Element with inappropriate use of aria-live -->
+    <details>
+        <summary>23. Element with inappropriate use of aria-live</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;div aria-live="assertive"&gt;Important notification here&lt;/div&gt;
+            </pre>
+            <div aria-live="assertive">
+                Important notification here
+            </div>
+        </div>
+    </details>
+
+    <!-- 24. Element with missing form input association -->
+    <details>
+        <summary>24. Element with missing form input association</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text">
+            </form>
+        </div>
+    </details>
+
+    <!-- 25. Element with missing alt attribute -->
+    <details>
+        <summary>25. Element with missing alt attribute</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;img src="example.jpg"&gt;
+            </pre>
+            <img src="https://via.placeholder.com/150">
+        </div>
+    </details>
+
+    <!-- 26. Element with inappropriate use of role -->
+    <details>
+        <summary>26. Element with inappropriate use of role</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;span role="button"&gt;Click me&lt;/span&gt;
+            </pre>
+            <span role="button">Click me</span>
+        </div>
+    </details>
+
+    <!-- 27. Element with non-specific link text -->
+    <details>
+        <summary>27. Element with non-specific link text</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;a href="#"&gt;Learn more&lt;/a&gt;
+            </pre>
+            <a href="#">Learn more</a>
+        </div>
+    </details>
+
+    <!-- 28. Form without accessible validation -->
+    <details>
+        <summary>28. Form without accessible validation</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="username" pattern="[A-Za-z]+" title="Only letters allowed"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+            </pre>
+            <form action="#" method="post">
+                <input type="text" name="username" pattern="[A-Za-z]+" title="Only letters allowed">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </details>
+
+    <!-- 29. Element with redundant title attribute -->
+    <details>
+        <summary>29. Element with redundant title attribute</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;span title="This is a span element"&gt;Span element&lt;/span&gt;
+            </pre>
+            <span title="This is a span element">Span element</span>
+        </div>
+    </details>
+
+    <!-- 30. Element with ambiguous or non-specific role -->
+    <details>
+        <summary>30. Element with ambiguous or non-specific role</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;div role="button"&gt;Click me&lt;/div&gt;
+            </pre>
+            <div role="button">Click me</div>
+        </div>
+    </details>
+
+    <!-- 31. Element with inappropriate use of tabindex -->
+    <details>
+        <summary>31. Element with inappropriate use of tabindex</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;div tabindex="0"&gt;This element should not receive keyboard focus&lt;/div&gt;
+            </pre>
+            <div tabindex="0">This element should not receive keyboard focus</div>
+        </div>
+    </details>
+
+    <!-- 32. Element with missing language attribute -->
+    <details>
+        <summary>32. Element with missing language attribute</summary>
+        <div>
+            <p>Example code:</p>
+            <pre>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;This paragraph is missing the language attribute.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+            <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Document</title>
+                </head>
+                <body>
+                    <p>This paragraph is missing the language attribute.</p>
+                </body>
+            </html>
+        </div>
+    </details>
+</body>
+
+</html>
