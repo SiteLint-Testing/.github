@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        (function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=fefc1b8ad455754f1b452959beac3db952c1e70f3197d3b613fe7e4b7f4aacf1';m.parentNode.insertBefore(a, m);
+        })(window, document, 'script');
+    </script>
 
-<script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=fefc1b8ad455754f1b452959beac3db952c1e70f3197d3b613fe7e4b7f4aacf1';m.parentNode.insertBefore(a, m);
-})(window, document, 'script');</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N8346FG3KJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N8346FG3KJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-N8346FG3KJ');
-</script>
+        gtag('config', 'G-N8346FG3KJ');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@
         body {
             font-family: Arial, sans-serif;
             margin-left: 20px;
+            background-color: white; /* Set background color to white */
         }
         details summary {
             background-color: #F5F5F5;
@@ -50,6 +52,7 @@
     </script>
 </head>
 <body>
+    <h1>Simple page</h1>
     <svg xmlns="http://www.w3.org/2000/svg" width="128" height="40" role="img" aria-labelledby="sllogo_title">
         <title id="sllogo_title">SiteLint logo</title>
         <path fill="#0070d1" d="M0 0h128v40H0z"></path>
@@ -57,4 +60,3 @@
     </svg>
 </body>
 </html>
-```
