@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=160a8219cc1abf71e416c2ac0ba2ed8a086d0c128009f4b8f40ccc4a6ae088ab';m.parentNode.insertBefore(a, m);
+})(window, document, 'script');</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N8346FG3KJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N8346FG3KJ');
+</script>
+
+    <meta charset="UTF-8">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Accessibility Issues</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            overflow-x: auto;
+        }
+
+        p {
+            margin: 20px 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Web Accessibility Issues</h1>
+
+    <h2>1. Image without alt text</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;img src="example.jpg"&gt;
+        </pre>
+        <img src="https://via.placeholder.com/150">
+    </div>
+
+    <h2>2. Form without label</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;input type="text" name="username"&gt;
+        </pre>
+        <input type="text" name="username">
+    </div>
+
+    <h2>3. Poor color contrast</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;p style="color: #aaa; background-color: #fff;"&gt;Poor contrast text&lt;/p&gt;
+        </pre>
+        <p style="color: #aaa; background-color: #fff;">Poor contrast text</p>
+    </div>
+
+    <h2>4. Missing document language</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;Content here&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+        <html>
+            <head>
+                <title>Document</title>
+            </head>
+            <body>
+                <p>Content here</p>
+            </body>
+        </html>
+    </div>
+
+    <h2>5. Missing form input labels</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;form&gt;
+    &lt;input type="text" name="name"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+        </pre>
+        <form>
+            <input type="text" name="name">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <h2>6. Missing headings</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;div&gt;No heading level defined&lt;/div&gt;
+        </pre>
+        <div>No heading level defined</div>
+    </div>
+
+    <h2>7. Non-descriptive link text</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;a href="https://example.com"&gt;Click here&lt;/a&gt;
+        </pre>
+        <a href="https://example.com">Click here</a>
+    </div>
+
+    <h2>8. Non-semantic elements used</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;div onclick="alert('clicked')"&gt;Click me&lt;/div&gt;
+        </pre>
+        <div onclick="alert('clicked')">Click me</div>
+    </div>
+
+    <h2>9. Missing ARIA roles</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;div&gt;Important content&lt;/div&gt;
+        </pre>
+        <div>Important content</div>
+    </div>
+
+    <h2>10. Misuse of ARIA roles</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;div role="button"&gt;Not a button&lt;/div&gt;
+        </pre>
+        <div role="button">Not a button</div>
+    </div>
+
+    <h2>11. Focusable elements without focus styles</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;button style="outline: none;"&gt;Button without focus style&lt;/button&gt;
+        </pre>
+        <button style="outline: none;">Button without focus style</button>
+    </div>
+
+    <h2>12. Inconsistent navigation</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Home&lt;/li&gt;
+        &lt;li&gt;About&lt;/li&gt;
+        &lt;li&gt;Services&lt;/li&gt;
+        &lt;li&gt;Contact&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+        </pre>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </div>
+
+    <h2>13. Lack of keyboard navigation</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;div tabindex="0"&gt;Focusable element&lt;/div&gt;
+        </pre>
+        <div tabindex="0">Focusable element</div>
+    </div>
+
+    <h2>14. Audio or video without captions or transcripts</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;video controls&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+        </pre>
+        <video controls>
+            <source src="movie.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <h2>15. Autoplaying audio</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;audio autoplay&gt;
+    &lt;source src="audio.mp3" type="audio/mp3"&gt;
+&lt;/audio&gt;
+        </pre>
+        <audio autoplay>
+            <source src="audio.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <h2>16. Missing skip navigation link</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;header&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Home&lt;/li&gt;
+            &lt;li&gt;About&lt;/li&gt;
+            &lt;li&gt;Contact&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;h1&gt;Main Content&lt;/h1&gt;
+&lt;/main&gt;
+        </pre>
+        <header>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Main Content</h1>
+        </main>
+    </div>
+
+    <h2>17. Using tables for layout</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Content in a table for layout&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+        </pre>
+        <table>
+            <tr>
+                <td>Content in a table for layout</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>18. Empty links</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;a href="#"&gt;&lt;/a&gt;
+        </pre>
+        <a href="#"></a>
+    </div>
+
+    <h2>19. Tables without headers</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John Doe&lt;/td&gt;
+        &lt;td&gt;johndoe@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Jane Smith&lt;/td&gt;
+        &lt;td&gt;janesmith@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+        </pre>
+        <table>
+            <tr>
+                <td>John Doe</td>
+                <td>johndoe@example.com</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>janesmith@example.com</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>20. Incorrect heading order</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h3&gt;Sub-heading&lt;/h3&gt;
+        </pre>
+        <h1>Main Heading</h1>
+        <h3>Sub-heading</h3>
+    </div>
+
+    <h2>21. Links opening in a new window without warning</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;a href="https://example.com" target="_blank"&gt;Open in new window&lt;/a&gt;
+        </pre>
+        <a href="https://example.com" target="_blank">Open in new window</a>
+    </div>
+
+    <h2>22. Lack of alternative input methods</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;canvas&gt;&lt;/canvas&gt;
+        </pre>
+        <canvas></canvas>
+    </div>
+
+    <h2>23. Placeholder as a label</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;input type="text" placeholder="Username"&gt;
+        </pre>
+        <input type="text" placeholder="Username">
+    </div>
+
+    <h2>24. Text as an image</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;img src="text-as-image.png" alt="Welcome to our website"&gt;
+        </pre>
+        <img src="https://via.placeholder.com/150" alt="Welcome to our website">
+    </div>
+
+    <h2>25. Not using landmarks</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;div&gt;
+    &lt;header&gt;Header&lt;/header&gt;
+    &lt;main&gt;Main content&lt;/main&gt;
+    &lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;
+        </pre>
+        <div>
+            <header>Header</header>
+            <main>Main content</main>
+            <footer>Footer</footer>
+        </div>
+    </div>
+
+    <h2>26. Non-responsive design</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;div style="width: 800px;"&gt;Non-responsive content&lt;/div&gt;
+        </pre>
+        <div style="width: 800px;">Non-responsive content</div>
+    </div>
+
+    <h2>27. Flashing content</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;div style="animation: flash 1s infinite;"&gt;Flashing content&lt;/div&gt;
+        </pre>
+        <div style="animation: flash 1s infinite;">Flashing content</div>
+    </div>
+
+    <h2>28. Too much content in one page</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;div&gt;Very long page with a lot of content&lt;/div&gt;
+        </pre>
+        <div>Very long page with a lot of content</div>
+    </div>
+
+    <h2>29. Links not distinguishable from text</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;a href="https://example.com" style="color: black;"&gt;Undistinguishable link&lt;/a&gt;
+        </pre>
+        <a href="https://example.com" style="color: black;">Undistinguishable link</a>
+    </div>
+
+    <h2>30. No semantic HTML</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;div&gt;
+    &lt;div&gt;Header&lt;/div&gt;
+    &lt;div&gt;Content&lt;/div&gt;
+    &lt;div&gt;Footer&lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+        <div>
+            <div>Header</div>
+            <div>Content</div>
+            <div>Footer</div>
+        </div>
+    </div>
+
+    <h2>31. No ARIA landmarks</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;div&gt;Main content area without ARIA landmark&lt;/div&gt;
+        </pre>
+        <div>Main content area without ARIA landmark</div>
+    </div>
+
+    <h2>32. Missing lang attribute</h2>
+    <div>
+        <p>Example code:</p>
+        <pre>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;This paragraph is missing the language attribute.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+        <html>
+            <head>
+                <meta charset="UTF-8">
+                <title>Document</title>
+            </head>
+            <body>
+                <p>This paragraph is missing the language attribute.</p>
+            </body>
+        </html>
+    </div>
+
+</body>
+
+</html>
