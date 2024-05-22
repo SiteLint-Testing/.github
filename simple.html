@@ -60,6 +60,11 @@
                 });
             });
         });
+
+        // Avoid using DeviceMotionEvent and DeviceOrientationEvent unless essential
+        if (window.DeviceMotionEvent || window.DeviceOrientationEvent) {
+            console.log('DeviceMotionEvent or DeviceOrientationEvent is supported, but not used.');
+        }
     </script>
 </head>
 <body>
