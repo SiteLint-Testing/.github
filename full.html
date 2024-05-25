@@ -21,23 +21,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Accessibility Issues</title>
-    <style>
+        <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
             background-color: white;
         }
-
-        pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ccc;
-            overflow-x: auto;
+        nav {
+            font-size: 0.875em; /* 1 point smaller (14px if base font size is 16px) */
+            margin: 20px 0; /* Adds 20px space above and below the navigation */
         }
-
-        p {
-            margin: 20px 0 5px;
+        nav a {
+            text-decoration: none; /* Remove underline from links */
+            color: #000; /* Set link color to black */
+        }
+        nav a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
+        /* Style for accordion summary elements */
+        details summary {
+            background-color: #F5F5F5; /* Light gray bar behind text */
+            padding: 5px; /* Padding for better visibility */
+            cursor: pointer; /* Cursor change on hover */
+            border-radius: 3px; /* Slight rounding of corners */
+        }
+        /* Style for expanded content areas */
+        details[open] > div {
+            background-color: #FFFFEB; /* Pale yellow background */
+            padding: 10px; /* Padding for expanded content areas */
+            border: 1px solid #d3d3d3; /* Light gray border for expanded content areas */
+            border-radius: 3px; /* Slight rounding of corners */
         }
     </style>
+
+    <script>
+        // JavaScript to close all accordions when one is closed
+        document.addEventListener('DOMContentLoaded', function() {
+            const detailsElements = document.querySelectorAll('details');
+            
+            detailsElements.forEach(function(detail) {
+                detail.addEventListener('toggle', function() {
+                    if (!detail.open) {
+                        // Close all accordions when one is closed
+                        detailsElements.forEach(function(otherDetail) {
+                            otherDetail.open = false;
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</head>
 </head>
 
 <body>
