@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  
+
 <script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=678c3dd84ecca1d09a38f31e48dc23deafdba6c66d76d3320ce78ec5486d970c';m.parentNode.insertBefore(a, m);
 })(window, document, 'script');</script>
 
@@ -17,14 +17,28 @@
 </script>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <title> Image with alt text that includes the file name </title>
 
     <style>
-        /* Style for the entire page */
         body {
-            font-family: Arial, sans-serif; /* Use Arial for all visible text */
-            margin-left: 20px; /* Margin on the left side of the page */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+        }
+        nav {
+            font-size: 0.875em; /* 1 point smaller (14px if base font size is 16px) */
+            margin: 20px 0; /* Adds 20px space above and below the navigation */
+        }
+        nav a {
+            text-decoration: none; /* Remove underline from links */
+            color: #000; /* Set link color to black */
+        }
+        nav a:hover {
+            text-decoration: underline; /* Underline links on hover */
         }
         /* Style for accordion summary elements */
         details summary {
@@ -41,42 +55,24 @@
             border-radius: 3px; /* Slight rounding of corners */
         }
     </style>
-    <script>
-        // JavaScript to close all accordions when one is closed
-        document.addEventListener('DOMContentLoaded', function() {
-            const detailsElements = document.querySelectorAll('details');
-            
-            detailsElements.forEach(function(detail) {
-                detail.addEventListener('toggle', function() {
-                    if (!detail.open) {
-                        // Close all accordions when one is closed
-                        detailsElements.forEach(function(otherDetail) {
-                            otherDetail.open = false;
-                        });
-                    }
-                });
-            });
-        });
-    </script>
-</head>
 
 <body>
 
-  <nav>
-    <a href="words-are-words-are-words.html">Words Are Words Are Words</a> |
-    <a href="simple.html">Simple</a> |
+<nav>
     <a href="index.html">Index</a> |
-    <a href="image-with-alt-text.html">Image With Alt Text</a> |
+    <a href="simple.html">Simple</a> |
     <a href="full.html">Full</a> |
+    <a href="background.html">Background</a> |
+    <a href="words-are-words-are-words.html">Words Are Words Are Words</a> |
+    <a href="image-with-alt-text.html">Image With Alt Text</a> |
+    <a href="01.html">01</a>
+    <a href="02.html">02</a> |
+    <a href="03.html">03</a> |
+    <a href="04.html">04</a> |
     <a href="eduardo.html">Eduardo</a> |
     <a href="daniel.html">Daniel</a> |
-    <a href="background.html">Background</a> |
-    <a href="04.html">04</a> |
-    <a href="03.html">03</a> |
-    <a href="02.html">02</a> |
-    <a href="01.html">01</a>
 </nav>
-  
+
     <!-- SiteLint logo at the top of the page -->
     <svg xmlns="http://www.w3.org/2000/svg" width="128" height="40" role="img" aria-labelledby="sllogo_title">
         <title id="sllogo_title">SiteLint logo</title>
@@ -94,7 +90,7 @@
             <pre>
 &lt;img src="image-file.jpg" alt="image-file"&gt;
             </pre>
-            <img src="https://via.placeholder.com/150" alt="This is a gray box with the number 150 on it.jpg">
+            <img src="https://via.placeholder.com/150" alt="150.jpg">
         </div>
     </details>
 
