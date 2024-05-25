@@ -9,11 +9,23 @@
 })(window, document, 'script');</script>
 
 
-    <style>
-        /* Style for the entire page */
+        <style>
         body {
-            font-family: Arial, sans-serif; /* Use Arial for all visible text */
-            margin-left: 20px; /* Margin on the left side of the page */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+        }
+        nav {
+            font-size: 0.875em; /* 1 point smaller (14px if base font size is 16px) */
+            margin: 20px 0; /* Adds 20px space above and below the navigation */
+        }
+        nav a {
+            text-decoration: none; /* Remove underline from links */
+            color: #000; /* Set link color to black */
+        }
+        nav a:hover {
+            text-decoration: underline; /* Underline links on hover */
         }
         /* Style for accordion summary elements */
         details summary {
@@ -30,6 +42,28 @@
             border-radius: 3px; /* Slight rounding of corners */
         }
     </style>
+
+    <script>
+        // JavaScript to close all accordions when one is closed
+        document.addEventListener('DOMContentLoaded', function() {
+            const detailsElements = document.querySelectorAll('details');
+            
+            detailsElements.forEach(function(detail) {
+                detail.addEventListener('toggle', function() {
+                    if (!detail.open) {
+                        // Close all accordions when one is closed
+                        detailsElements.forEach(function(otherDetail) {
+                            otherDetail.open = false;
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</head>
+    
     <script>
         // JavaScript to close all accordions when one is closed
         document.addEventListener('DOMContentLoaded', function() {
