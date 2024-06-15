@@ -31,15 +31,15 @@
         const pipeNorth = new Image();
         const pipeSouth = new Image();
 
-        bird.src = "https://www.spriters-resource.com/resources/sheet_icons/49/5268.png";
-        bg.src = "https://raw.githubusercontent.com/juho0719/Flappy-Bird-JavaScript/main/images/bg.png";
-        fg.src = "https://raw.githubusercontent.com/juho0719/Flappy-Bird-JavaScript/main/images/fg.png";
-        pipeNorth.src = "https://raw.githubusercontent.com/juho0719/Flappy-Bird-JavaScript/main/images/pipeNorth.png";
-        pipeSouth.src = "https://raw.githubusercontent.com/juho0719/Flappy-Bird-JavaScript/main/images/pipeSouth.png";
+        bird.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA9UlEQVQ4ja3TsU7DUBQG4J9xE8UjiULMPhOxURFwKn1GwSyUplLgH0Mg+xHLjZuEB1pIihVtwQXkgnm3g4FkLUHKyx5fJfufc+55nnPM+F9hLMhF1wnC3F0EMRBhE6Q14EtL7cS5spgCrKZwkPC6Akgk8IrQmyLSZ7T3kOEKccgKMGIzq1YgIzHPrVNoRA2VwAY7UCCUt5OwlZ7MCGEFV3d7zD2r2rAcUJbsAr3I3mC3jLwHN1VAZbjMz4W0aY7zMyH9phEZ8Fbd+I/uyhdRdfMNFr1eYr3FTMLAvB+jc+A/Rxy3yY/XrsAAAAASUVORK5CYII=";
+        bg.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAB3RJTUUH5QcJChk4YlT4JgAAAB1pVFh0Q29tbWVudAAAAAAAvK6ymQAAAGJ0Uk5TAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQF7QgVIAAAFdElEQVR42uzde1wURfD+8b9s1tZSKKIonBQtoKwkkSMFQtBTVYSKEopFVhITDUtAUUVCkp0hQFL5QWSUQj7AQkSkLRKEQoSpQYkpIokBRRUKCCiCUKioH/d6Pe9r3TP+95ru/8ztlr3k1L7XPuT38zey53l5vZlvbqR4Xm/E5BRDwMAAAC6cPaxOIB2QkAAAAAASUVORK5CYII=";
+        fg.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAQAAADb5MeFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJTUUH5QsNDxcjZJmiDAAAAwRJREFUeF7t3E1uwyAMRtGJIMFApv//PVAcLCJ1q1x2WHzlIl06J0CwQBeBNDFDNADwS6hAbwTCGTVDFDFDFAF1QxQxQxQA1kfwMojAowAVsAWzAW1gCxgCtwjAoMgEYAmkDDA5H+Mr0EUhcMXgHsQ7XvcAsYCtwBKwBgQ2kYdgZl6v3+VwMwmCXkHlDFDCFDFDBfMCJmQix8mBGCGTVDFDFDFDP4PqgAygx/5IDilQAStt0LTPVdU6KGl2tx7QtKHUSLhLYA6H1gAQ9ApB4DAEUQ5EzAJtwDW4BJmMlAIbiMGrg2mAogA1BgnAKMgFJwAOcI6HA4HptG4NYAdAA0HkcAL2wMCq4ADWc4HwGPgNLD8BuQArMEZQAdKc5iPYA9BMLC+aH0C8AT1gArAKSwzOBR5Dyy+sjwLDwPNgLFFDFDFDFA1fMnwULdVDAw6KNDFDFDFDFQzAmDgx8AIvPZpYBAAD//9bJAPy7+P7/p0bNPAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0xMS0yOVQxNzo0MzowNyswMDowMElLUosAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMTEtMjlUMTc6NDM6MDcrMDA6MDAxYivlAAAAAElFTkSuQmCC";
+        pipeNorth.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAG0lEQVQ4T2NkoBAwUqifARVgRE/6TwFiHQoMDAGKOFZRIVN2VAAAAAElFTkSuQmCC";
+        pipeSouth.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAG0lEQVQ4T2NkIBIwEqmfwIVgRE/6TwFiHQoMDAGHRFZPIBdNjAAAAAElFTkSuQmCC";
 
         // Variables
         let gap = 85;
-        let constant = pipeNorth.height + gap;
+        let constant = 242 + gap;
 
         let bX = 10;
         let bY = 150;
