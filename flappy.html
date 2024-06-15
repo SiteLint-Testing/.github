@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #70c5ce;
+            margin: 0;
+        }
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="flappyBird" width="320" height="480"></canvas>
+    <script>
+        const canvas = document.getElementById("flappyBird");
+        const ctx = canvas.getContext("2d");
+
+        // Load images
+        const bird = new Image();
+        const bg = new Image();
+        const fg = new Image();
+        const pipeNorth = new Image();
+        const pipeSouth = new Image();
+
+        bird.src = "https://www.spriters-resource.com/resources/sheet_icons/49/5268.png";
+        bg.src = "https://raw.githubusercontent.com/juho0719/Flappy-Bird-JavaScript/main/images/bg.png";
+        fg.src = "https://raw.githubusercontent.com/juho0719/Flappy-Bird-JavaScript/main/images/fg.png";
+        pipeNorth.src = "https://raw.githubusercontent.com/juho0719/Flappy-Bird-JavaScript/main/images/pipeNorth.png";
+        pipeSouth.src = "https://raw.githubusercontent.com/juho0719/Flappy-Bird-JavaScript/main/images/pipeSouth.png";
+
+        // Variables
+        let gap = 85;
+        let constant = pipeNorth.height + gap;
+
+        let bX = 10;
+        let bY = 150;
+
+        let gravity = 1.5;
+        let score = 0;
+
+        // Audio files
+        const fly = new Audio();
+        const scor = new Audio();
+
+        fly.src = "http://www.soundjay.com/button/beep-07.wav";
+        scor.src = "http://www.soundjay.com/button/beep-10.wav";
+
+        // On key down
+        document.addEventListener("keydown", moveUp);
+
+        function moveUp() {
+            bY -= 25;
+            fly.play();
+        }
+
+        // Pipe coordinates
+        let pipe = [];
+
+        pipe[0] = {
+            x: canvas.width,
+            y: 0
+        };
+
+        // Draw images
+        function draw() {
+            ctx.drawImage(bg, 0, 0);
+
+            for (let i = 0; i < pipe.length; i++) {
+                ctx.drawImage(pipeNorth, pipe[i].x, pipe[i].y);
+                ctx.drawImage(pipeSouth, pipe[i].x, pipe[i].y + constant);
+
+                pipe[i].x--;
+
+                if (pipe[i].x == 125) {
+                    pipe.push({
+                        x: canvas.width,
+                        y: Math.floor(Math.random() * pipeNorth.height) - pipeNorth.height
+                    });
+                }
+
+                // Detect collision
+                if (bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY + bird.height >= pipe[i].y + constant) || bY + bird.height >= canvas.height - fg.height) {
+                    location.reload(); // Reload the page
+                }
+
+                if (pipe[i].x == 5) {
+                    score++;
+                    scor.play();
+                }
+            }
+
+            ctx.drawImage(fg, 0, canvas.height - fg.height);
+
+            ctx.drawImage(bird, bX, bY);
+
+            bY += gravity;
+
+            ctx.fillStyle = "#000";
+            ctx.font = "20px Verdana";
+            ctx.fillText("Score : " + score, 10, canvas.height - 20);
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
+</html>
